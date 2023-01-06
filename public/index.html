@@ -15,6 +15,7 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -25,6 +26,115 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+  <style>
+    .column {
+  margin: 20px;
+ }
+ .row{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   margin-right:0px;
+ }
+ .row:after {
+   content: "";
+   display: table;
+   clear: both;
+ }
+     #editor {
+       min-height: 500px;
+     }
+     #button{
+       display: flex;
+       float: right;
+     }
+     .btn{
+       margin-right:20px;
+     }
+ 
+ .column.quest1{
+   display: grid;
+   grid-template-rows: 150px 150px 150px 150px;
+   margin-left:30px;
+ }
+ .quest{
+   margin-left:20px;
+ }
+ .quest-content{
+   background-color: rgba(0,0,0,0.1);
+   padding-left:20px;
+ }
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background-color: rgb(243, 66, 101);;;
+  color: white;
+}
+
+body{
+    text-align: center;
+    background: #00ECB9;
+  font-family: sans-serif;
+  font-weight: 100;
+}
+h1{
+  color: #396;
+  font-weight: 100;
+  font-size: 40px;
+  margin: 40px 0px 20px;
+}
+ #clockdiv{
+    font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
+}
+#clockdiv > div{
+    padding: 10px;
+    border-radius: 3px;
+    background: #00BF96;
+    display: inline-block;
+}
+#clockdiv div > span{
+    padding: 15px;
+    border-radius: 3px;
+    background: #00816A;
+    display: inline-block;
+}
+smalltext{
+    padding-top: 5px;
+    font-size: 16px;
+}
+
+  </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -39,5 +149,72 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <!-- Simulate a smartphone / tablet -->
+
+
+  <!-- Top Navigation Menu -->
+ 
+  
+
+  <!-- End smartphone / tablet look -->
+  </div>
   </body>
 </html>
+
+<script>
+  function alertHello()
+  {
+    alert('Hello');
+  }
+  
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
+function myTimer(){
+  var deadline = new Date("jan 6, 2023 010:00:00").getTime();
+  
+var x = setInterval(function() {
+  
+var now = new Date().getTime();
+var t = deadline - now;
+var days = Math.floor(t / (1000 * 60 * 60 * 24));
+var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((t % (1000 * 60)) / 1000);
+document.getElementById("day").innerHTML =days ;
+document.getElementById("hour").innerHTML =hours;
+document.getElementById("minute").innerHTML = minutes; 
+document.getElementById("second").innerHTML =seconds; 
+if (t < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "TIME UP";
+        document.getElementById("day").innerHTML ='0';
+        document.getElementById("hour").innerHTML ='0';
+        document.getElementById("minute").innerHTML ='0' ; 
+        document.getElementById("second").innerHTML = '0'; }
+}, 1000);
+}
+
+//   document.addEventListener("visibilitychange",myvisibility);
+// function myvisibility(){
+//   document.title=document.visibilityState;
+//   console.log(document.visibilityState);
+// }
+
+
+
+
+// var hamburger = document.querySelector(".hamburger");
+//       hamburger.addEventListener("click", function run(){
+//           document.querySelector("body").classList.toggle("active");
+//       })
+
+
+
+</script>

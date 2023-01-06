@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Helmet ,HelmetProvider} from "react-helmet-async";
+import { BrowserRouter,Route,Routes, useNavigate } from 'react-router-dom';
+import Compiler from "./Compiler";
+import Home from "./Home";
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+   
+    <Routes>
+    {/* <Route path="/home/:name" element={<Home/>}/>
+    <Route path="/home/:name/quest" element={<Quest/>}/>
+    <Route path="/home/:name/leaderboard" element={<Leaderboard/>}/>
+    <Route path="/home/:name/result" element={<Result/>}/>
+    <Route path="/compiler" element={<Compiler/>}/> */}
+    <Route path='/compile' element={<Compiler/>}/>
+    <Route path='/home' element={<Home/>}/>
+</Routes>
+
+</BrowserRouter>
+
+
+    
+
+
   );
 }
 
