@@ -2,6 +2,7 @@ import { Helmet ,HelmetProvider} from "react-helmet-async";
 import { BrowserRouter,Route,Routes, useNavigate } from 'react-router-dom';
 import Compiler from "./Compiler";
 import Home from "./Home";
+import Autosave from "./Autosave";
 function App() {
   
   return (
@@ -15,6 +16,7 @@ function App() {
     <Route path="/compiler" element={<Compiler/>}/> */}
     <Route path='/compile' element={<Compiler/>}/>
     <Route path='/home' element={<Home/>}/>
+    <Route path='/autosave' element={<Autosave/>}/>
 </Routes>
 
 </BrowserRouter>
